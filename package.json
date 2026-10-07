@@ -5,6 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server2.js",
+    "db:migration:prod": "prisma migrate deploy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "contract:emit": "prisma contract emit"
   },
