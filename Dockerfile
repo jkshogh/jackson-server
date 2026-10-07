@@ -39,10 +39,10 @@ RUN addgroup --system --gid 1001 nodejs \
 WORKDIR /app
 
 # Copy only what is needed at runtime
-COPY --from=builder --chown=expressjs:nodejs /src/package.json ./
-COPY --from=builder --chown=expressjs:nodejs /src/node_modules ./node_modules
-COPY --from=builder --chown=expressjs:nodejs /src/prisma ./prisma
-COPY --from=builder --chown=expressjs:nodejs /src/app.js ./
+COPY --from=builder --chown=expressjs:nodejs /app/package.json ./
+COPY --from=builder --chown=expressjs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=expressjs:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=expressjs:nodejs /app/src/app.js ./
 # Add any other source files / folders you need (e.g. routes, controllers, etc.)
 # COPY --from=builder --chown=expressjs:nodejs /app/src ./src
 
