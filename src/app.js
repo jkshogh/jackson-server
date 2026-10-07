@@ -1,13 +1,20 @@
 import express from 'express';
-
-const app = express();
-const port = 3000;
+import bodyParser from 'body-parser';
+import cors from "cors";
 
 import klookRouter from './routes/klook.js';
 import formRouter from './routes/forms.js';
 import todoRouter from './routes/todo.js';
 
-import bodyParser from 'body-parser';
+const app = express();
+const port = 3000;
+
+const corsOptions = {
+    origin: 'https://klook.jkshogh.workers.dev', // Only allow this domain
+    optionsSuccessStatus: 200            // For legacy browser support (IE11)
+};
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
