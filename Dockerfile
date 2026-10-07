@@ -42,7 +42,7 @@ WORKDIR /app
 COPY --from=builder --chown=expressjs:nodejs /app/package.json ./
 COPY --from=builder --chown=expressjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=expressjs:nodejs /app/prisma ./prisma
-COPY --from=builder --chown=expressjs:nodejs /app/src/app.js ./
+COPY --from=builder --chown=expressjs:nodejs /app/src ./src
 # Add any other source files / folders you need (e.g. routes, controllers, etc.)
 # COPY --from=builder --chown=expressjs:nodejs /app/src ./src
 
